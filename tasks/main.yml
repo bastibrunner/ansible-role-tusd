@@ -30,7 +30,7 @@
   when: p.stat.exists == false
 
 - name: go build
-  command: /usr/local/go/bin/go build
+  command: /usr/local/go/bin/go build -o tusd cmd/tusd/main.go
   args:
     chdir: "{{ tusd__go_path }}/src/{{ tusd__go_package }}"
   environment:
