@@ -1,0 +1,15 @@
+---
+galaxy_info:
+  author: Victor Yap
+  description: TUS Server
+
+  license: MIT
+
+  min_ansible_version: 2.2
+
+  galaxy_tags:
+    - tus
+    - tusd
+
+dependencies:
+  - joshualund.golang

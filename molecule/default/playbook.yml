@@ -1,0 +1,7 @@
+---
+- name: Converge
+  hosts: all
+  roles:
+    - role: ansible-role-tusd
+      vars:
+        tusd_enable_service: true

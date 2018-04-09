@@ -1,0 +1,20 @@
+---
+tusd__apt_packages:
+  - git
+  - golang-go
+
+tusd__dnf_packages:
+  - git
+  - golang-go
+
+tusd__yum_packages:
+  - git
+  - golang
+
+tusd__go_path: /opt/tusd/go
+tusd__go_package: github.com/tus/tusd
+
+tusd__executable_path: "{{ tusd__go_path + '/src/' + tusd__go_package + '/tusd' }}"
+tusd__systemd_unit_path: /etc/systemd/system/tusd.service
+
+tusd_enable_service: false

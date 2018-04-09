@@ -1,0 +1,52 @@
+---
+- name: Install golang
+  include_role:
+    name: joshualund.golang
+  vars:
+    set_go_path: false
+
+- name: Install git
+  package:
+    name: git
+    state: present
+
+- name: stat {{ tusd__executable_path }}
+  stat:
+    path: "{{ tusd__executable_path }}"
+  register: p
+
+- name: go get {{ tusd__go_package }}
+  command: /usr/local/go/bin/go get "{{ tusd__go_package }}"
+  environment:
+    GOPATH: "{{ tusd__go_path }}"
+  when: p.stat.exists == false
+
+- name: go get ./...
+  command: /usr/local/go/bin/go get ./...
+  args:
+    chdir: "{{ tusd__go_path }}/src/{{ tusd__go_package }}"
+  environment:
+    GOPATH: "{{ tusd__go_path }}"
+  when: p.stat.exists == false
+
+- name: go build
+  command: /usr/local/go/bin/go build
+  args:
+    chdir: "{{ tusd__go_path }}/src/{{ tusd__go_package }}"
+  environment:
+    GOPATH: "{{ tusd__go_path }}"
+  when: p.stat.exists == false
+
+- name: Template {{ tusd__systemd_unit_path }}
+  template:
+    src: tusd.service
+    dest: "{{ tusd__systemd_unit_path }}"
+  notify: restart tusd
+  when: tusd_enable_service
+
+- name: Enable tusd.service
+  systemd:
+    name: tusd.service
+    enabled: true
+  notify: restart tusd
+  when: tusd_enable_service

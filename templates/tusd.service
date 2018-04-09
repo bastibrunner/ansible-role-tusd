@@ -1,0 +1,9 @@
+[Unit]
+Description=TUS Server
+
+[Service]
+Type=simple
+ExecStart={{ tusd__executable_path }}
+
+[Install]
+WantedBy=default.target
