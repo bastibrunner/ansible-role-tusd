@@ -1,6 +1,0 @@
----
-- name: Install packages
-  dnf:
-    name: "{{ item }}"
-  with_items:
-    - "{{ tusd__dnf_packages }}"
