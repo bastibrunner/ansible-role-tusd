@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "64f81c469ad9c3d5e30051de397e5e45c94b2f88762a25a804441401fc184e3a"
+            "sha256": "d02ab638ae112268dac85b4e549bba390cc9771a5f78fb9774255af369642635"
         },
         "host-environment-markers": {
             "implementation_name": "cpython",
@@ -31,10 +31,9 @@
     "default": {
         "ansible": {
             "hashes": [
-                "sha256:74bb063322372fc9e2a84bbe562ab5d1b45a2fba3ec609c03d824758e6dd9c38",
-                "sha256:714ede4b0f5455eb2dd2536d8cabb42ab439f52b5ac902308ad027b46f68e6dc"
+                "sha256:de18ab1cf0712252e928dd1226b2c058d5345ef7377a01e0601a268fcd512a90"
             ],
-            "version": "==2.5.0"
+            "version": "==2.2.3.0"
         },
         "ansible-lint": {
             "hashes": [
@@ -166,6 +165,7 @@
                 "sha256:3c85641778460581c42924384f5e68076d724ceac0f267d66c757f7535069c93",
                 "sha256:e90f17980e6ab0f3c2f3730e56d1fe9bcba1891eeea58966e89d352492cc74f4"
             ],
+            "markers": "platform_python_implementation != 'PyPy'",
             "version": "==1.11.5"
         },
         "chardet": {
@@ -253,7 +253,7 @@
                 "sha256:8ad8c4783bf61ded74527bffb48ed9b54166685e4230386a9ed9b1279e2df5b1",
                 "sha256:2d81cbbe0e73112bdfe6ef8576f2238f2ba27dd0d55752a776c41d38b7da2850"
             ],
-            "markers": "python_version < '3.4'",
+            "markers": "python_version < '3'",
             "version": "==1.1.6"
         },
         "fasteners": {
@@ -286,11 +286,11 @@
         },
         "git-url-parse": {
             "hashes": [
-                "sha256:bf0a20c48e8552fea1218b52714be84fa31b0d73c58897e70b765d5e7a26f4cb",
-                "sha256:5cec43946d06d1a35e90567473d9ffe929c38ff25fd01a1858331cd0aa265e44",
-                "sha256:75d1cf1e19534678711e1a9293e6fb978461a5f734adf941cd468a802d08bbb2"
+                "sha256:7929b594725394b34008fae557991eed727afab9521937fd59f565105361ec81",
+                "sha256:d647f3d7b10b6aec4a14495c45b2bd500dcfa73d2711578ef2149879bbcdf06d",
+                "sha256:a7d1dba7fc253dff8afb7b683af35834864c9796eb130b44ec63b2584bbc6522"
             ],
-            "version": "==1.0.2"
+            "version": "==1.1.0"
         },
         "idna": {
             "hashes": [
@@ -465,6 +465,12 @@
                 "sha256:99a8ca03e29851d96616ad0404b4aad7d9ee16f25c9f9708a11faf2810f7b226"
             ],
             "version": "==2.18"
+        },
+        "pycrypto": {
+            "hashes": [
+                "sha256:f2ce1e989b272cfcb677616763e0a2e7ec659effa67a88aa92b3a65528f60a3c"
+            ],
+            "version": "==2.6.1"
         },
         "pyflakes": {
             "hashes": [
