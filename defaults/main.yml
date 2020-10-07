@@ -5,4 +5,8 @@ tusd__go_package: github.com/tus/tusd
 tusd__executable_path: "{{ tusd__go_path + '/src/' + tusd__go_package + '/tusd' }}"
 tusd__systemd_unit_path: /etc/systemd/system/tusd.service
 
+tusd__src_path: "/tmp/tusd-src/"
+
 tusd_enable_service: false
+
+tusd_golang_version: '1.13'
